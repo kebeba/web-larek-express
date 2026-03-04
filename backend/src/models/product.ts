@@ -1,11 +1,11 @@
 import { model, Schema } from 'mongoose';
 
-interface IProductImage {
+export interface IProductImage {
   fileName: string,
   originalName: string,
 }
 
-interface IProduct {
+export interface IProduct {
   title: string,
   image: IProductImage,
   category: string,

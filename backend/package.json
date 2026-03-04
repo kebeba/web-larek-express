@@ -26,9 +26,10 @@
     "typescript": "^5.4.5"
   },
   "dependencies": {
+    "@faker-js/faker": "^10.3.0",
+    "celebrate": "^15.0.3",
     "express": "^4.19.2",
     "mongoose": "^8.3.2",
-    "validator": "^13.11.0",
-    "@faker-js/faker": "^10.3.0"
+    "validator": "^13.11.0"
   }
 }
