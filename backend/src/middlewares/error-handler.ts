@@ -6,9 +6,7 @@ const errorHandler = (
   error: BaseAppError,
   _req: Request,
   res: Response,
-  next: NextFunction,
-) => {
-  return res.status(error.statusCode).json({ message: error.message });
-};
+  _next: NextFunction,
+) => res.status(error.statusCode).json({ message: error.message });
 
 export default errorHandler;

@@ -28,9 +28,8 @@ export const createProduct = async (
   } catch (error) {
     if (error instanceof Error && error.message.includes('E11000')) {
       return next(new IntegrityConflictError('Товар с таким названием уже существует'));
-    } else {
-      return next(new BaseAppError('Внутренняя ошибка сервера', 500));
     }
+    return next(new BaseAppError('Внутренняя ошибка сервера', 500));
   }
 };
 
