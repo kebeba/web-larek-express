@@ -2,6 +2,7 @@ import { faker } from '@faker-js/faker';
 import { NextFunction, Request, Response } from 'express';
 
 import BadRequestError from '../exceptions/bad-request';
+import BaseAppError from '../exceptions/base-app-exception';
 import productModel from '../models/product';
 import { IOrderData } from '../schemas/order';
 
@@ -33,7 +34,7 @@ const makeOrder = async (req: Request, res: Response, next: NextFunction) => {
 
     return res.status(200).send({ id: faker.string.uuid(), total: order.total });
   } catch (error) {
-    return next(error);
+    return next(new BaseAppError('Внутренняя ошибка сервера', 500));
   }
 };
 

@@ -1,4 +1,5 @@
 import { errors } from 'celebrate';
+import dotenv from 'dotenv'
 import express from 'express';
 import mongoose from 'mongoose';
 import path from 'path';
@@ -9,7 +10,7 @@ import { errorLogger, requestLogger } from './middlewares/logger';
 import orderRouter from './routes/order';
 import productRouter from './routes/products';
 
-
+dotenv.config()
 const { PORT = 3000, DB_ADDRESS = 'mongodb://127.0.0.1:27017/weblarek' } = process.env;
 
 const app = express();
